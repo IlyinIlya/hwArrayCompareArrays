@@ -23,9 +23,8 @@ public class Main {
             } else if (max < money) {
                 max = money;
             }
-            average += money;
-            average = average / inputArray1.length;
         }
+        average = sum / inputArray1.length;
         float[] outputArray1 = {sum, max, min, average};
         System.out.println("inputArray1: " + Arrays.toString(inputArray1));
         System.out.println("outputArray1: " + Arrays.toString(outputArray1));
@@ -40,9 +39,10 @@ public class Main {
         //outputArray2 определите самостоятельно. В конце каждой задачи выведите inputArray2 и outputArray2.
         int[] inputArray2 = {12_754, 24_261, 15_366, 19_972, 22_003};
         float[] outputArray2 = new float[inputArray2.length];
-        double taxes = 0.13;
-        for(int i = 0; i < inputArray2.length; i++){
-            outputArray2[i] = (float) (inputArray2[i] * taxes);
+        int iTax = 0;
+        for(float calcTaxes: inputArray2){
+            outputArray2[iTax] = (float) (calcTaxes * 0.13);
+            iTax++;
         }
         System.out.println("inputArray2: " + Arrays.toString(inputArray2));
         System.out.println("outputArray2: " + Arrays.toString(outputArray2));
@@ -55,10 +55,12 @@ public class Main {
         //outputArray3 определите самостоятельно. В конце каждой задачи выведите inputArray3 и outputArray3.
         int[] inputArray3 = {5128, 7500, 3200, 1450, 5015};
         boolean[] outputArray3 = new boolean[inputArray3.length];
-        int bonus = 5000;
-        int calc = 0;
-        for (int i = 0; i < inputArray3.length; i++){
-            outputArray3[i] = bonus < inputArray3[i];
+        int iCalc = 0;
+        for (int bonus: inputArray3){
+            if (bonus > 5000){
+                outputArray3[iCalc] = true;
+            }
+            iCalc++;
         }
         System.out.println("inputArray3: " + Arrays.toString(inputArray3));
         System.out.println("outputArray3: " + Arrays.toString(outputArray3));
